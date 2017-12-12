@@ -14,6 +14,5 @@ use Hunter\cache\Plugin\HunterCache;
  *   缓存目标
  */
 function cache($target = 'memcache') {
-    $cache = new HunterCache();
-    return $cache::getConnection($target);
+    return HunterCache::getConnection($target);
 }
