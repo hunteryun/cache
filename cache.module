@@ -13,6 +13,10 @@ use Hunter\cache\Plugin\HunterCache;
  * @param string $target
  *   缓存目标
  */
-function cache($target = 'memcache') {
+function cache($target = 'file') {
+    global $default_cache;
+    if(!empty($default_cache)){
+      $target = $default_cache;
+    }
     return HunterCache::getConnection($target);
 }
